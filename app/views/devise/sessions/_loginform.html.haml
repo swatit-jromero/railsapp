@@ -1,0 +1,29 @@
+= form_for(resource, :as => resource_name,
+           :url => session_path(resource_name),
+           :html => {:id => 'sign_in_user'},
+           :format => :json,
+           :remote => true ) do |f|
+    %h2 Sign In
+    %hr/
+    .form-group
+        .input-group
+            %span.input-group-addon
+                %span.atsymbol &#64;
+            = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'E-mail or username'
+    .form-group
+        .input-group
+            %span.input-group-addon
+                %span.glyphicon.glyphicon-lock
+            = f.password_field :password, autocomplete: 'off', class: 'form-control', placeholder: 'Password'
+    - if devise_mapping.rememberable?
+        .align_left
+            %p.rememberme
+                = f.check_box :remember_me
+                = f.label :remember_me
+    %hr/
+    .align_center
+        = submit_tag 'Login',                              |
+            :id => 'submit', :name => 'submit',            |
+            :class => 'btn btn-success form_submit',       |
+            :disabled => false, :disable_with => 'Wait...' |
+    %br/

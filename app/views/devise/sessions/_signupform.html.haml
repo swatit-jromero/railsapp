@@ -1,0 +1,30 @@
+= form_for(resource, :as => resource_name,
+           :url => registration_path(resource_name),
+           :html => {:id => 'sign_up_user'},
+           :format => :json,
+           :remote => true ) do |f|
+    %h2 Sign Up
+    %hr/
+    = devise_error_messages!
+    .form-group
+        .input-group
+            %span.input-group-addon
+                %span.atsymbol &#64;
+            = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'E-mail or username'
+    .form-group
+        .input-group
+            %span.input-group-addon
+                %span.glyphicon.glyphicon-lock
+            = f.password_field :password, autocomplete: 'off', class: 'form-control', placeholder: 'Password'
+    .form-group
+        .input-group
+            %span.input-group-addon
+                %span.glyphicon.glyphicon-lock
+            = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control', placeholder: 'Password confirmation'
+    %hr/
+    .align_center
+        = submit_tag 'Sign up',                            |
+            :id => 'submit', :name => 'submit',            |
+            :class => 'btn btn-warning form_submit',       |
+            :disabled => false, :disable_with => 'Wait...' |
+    %br/

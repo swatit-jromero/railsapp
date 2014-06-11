@@ -1,0 +1,10 @@
+!!!
+%html
+    %head
+        %title Railsapp
+        = stylesheet_link_tag "application"
+        = csrf_meta_tags
+    %body
+        .container
+            = yield
+            = javascript_include_tag "application"

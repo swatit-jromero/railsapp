@@ -1,0 +1,41 @@
+/**
+ * All your custom CSS should go into this file
+ */
+
+body {
+    background-color: #F7F7F7;
+}
+
+#signform-section {
+    margin-top: 100px;
+}
+
+.atsymbol {
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.align_center {
+    text-align: center;
+}
+
+.align_left {
+    text-align: left;
+}
+
+.align_right {
+    text-align: right;
+}
+
+.wrapper-form {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+    border: 2px solid #F1F1F1;
+    background-color: #FFF;
+}
+
+.rememberme {
+    padding: 8px 0;
+}
